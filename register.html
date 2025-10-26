@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Account - FitnessHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1>🏋️ FitnessHub</h1>
+            <p class="tagline">Your Journey Starts Here</p>
+        </div>
+        
+        <!-- Bonus: Welcome video -->
+        <div class="welcome-media">
+            <video autoplay loop muted playsinline>
+                <source src="#" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <!-- Bonus: Audio player for background music -->
+        <div class="audio-controls">
+            <h3>🎵 Select Background Music:</h3>
+            <audio controls>
+                <source src="#" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p class="audio-note">(Select music to enhance your experience)</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="registration-section">
+            <h2>Welcome! Create Your Account Below</h2>
+            <p class="intro-text">Join thousands of fitness enthusiasts on their journey to better health.</p>
+            
+            <form id="registrationForm" method="POST" action="#" enctype="multipart/form-data">
+                
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="fullName">Full Name <span class="required">*</span></label>
+                    <input type="text" 
+                           id="fullName" 
+                           name="fullName" 
+                           required 
+                           autofocus
+                           placeholder="Enter your full name"
+                           pattern="[A-Za-z\s]{2,50}"
+                           minlength="2"
+                           maxlength="50">
+                    <span class="error-message">Name must be 2-50 characters and contain only letters</span>
+                </div>
+
+                <!-- Email Address -->
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" 
+                           id="email" 
+                           name="email" 
+                           required
+                           placeholder="your.email@example.com"
+                           autocomplete="email">
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">Password <span class="required">*</span></label>
+                    <input type="password" 
+                           id="password" 
+                           name="password" 
+                           required
+                           placeholder="Minimum 8 characters with numbers and letters"
+                           pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$"
+                           minlength="8"
+                           autocomplete="new-password">
+                    <span class="error-message">Password must be at least 8 characters with letters and numbers</span>
+                    
+                    <!-- Bonus: Password strength meter -->
+                    <div class="password-strength">
+                        <meter id="passwordStrength" min="0" max="100" value="0" low="40" optimum="80" high="60">0%</meter>
+                        <span id="strengthText" class="strength-indicator">Enter password to check strength</span>
+                    </div>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
+                    <input type="password" 
+                           id="confirmPassword" 
+                           name="confirmPassword" 
+                           required
+                           placeholder="Re-enter your password"
+                           autocomplete="new-password">
+                    <span class="error-message" id="passwordMatchError">Passwords must match</span>
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="form-group">
+                    <label for="dateOfBirth">Date of Birth <span class="required">*</span></label>
+                    <input type="date" 
+                           id="dateOfBirth" 
+                           name="dateOfBirth" 
+                           required
+                           max="2010-12-31"
+                           min="1950-01-01">
+                </div>
+
+                <!-- Phone Number -->
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number <span class="required">*</span></label>
+                    <input type="tel" 
+                           id="phoneNumber" 
+                           name="phoneNumber" 
+                           required
+                           placeholder="+44 7XXX XXXXXX or 07XXX XXXXXX"
+                           pattern="[\+]?[0-9\s\-\(\)]{10,15}"
+                           autocomplete="tel">
+                    <span class="error-message">Please enter a valid phone number</span>
+                </div>
+
+                <!-- Username with datalist -->
+                <div class="form-group">
+                    <label for="username">Preferred Username <span class="required">*</span></label>
+                    <input type="text" 
+                           id="username" 
+                           name="username" 
+                           required
+                           placeholder="Choose a unique username"
+                           pattern="[A-Za-z0-9_]{3,20}"
+                           minlength="3"
+                           maxlength="20"
+                           autocomplete="username">
+                    <datalist id="usernameSuggestions">
+                        <option value="FitnessWarrior">
+                        <option value="GymEnthusiast">
+                        <option value="HealthChampion">
+                    </datalist>
+                    <span class="error-message">Username must be 3-20 characters (letters, numbers, underscore only)</span>
+                </div>
+
+                <!-- URL for Social Media -->
+                <div class="form-group">
+                    <label for="socialUrl">Social Media Profile (Optional)</label>
+                    <input type="url" 
+                           id="socialUrl" 
+                           name="socialUrl" 
+                           placeholder="https://instagram.com/yourprofile">
+                </div>
+
+                <!-- Gender -->
+                <div class="form-group">
+                    <label>Gender <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male" class="radio-label">Male</label>
+                        
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female" class="radio-label">Female</label>
+                        
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other" class="radio-label">Other</label>
+                    </div>
+                </div>
+
+                <!-- Interests (Checkboxes) -->
+                <div class="form-group">
+                    <label>Interests <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="interest1" name="interests" value="weightlifting" required>
+                        <label for="interest1">🏋️ Weightlifting</label>
+                        
+                        <input type="checkbox" id="interest2" name="interests" value="cardio">
+                        <label for="interest2">🏃 Cardio</label>
+                        
+                        <input type="checkbox" id="interest3" name="interests" value="yoga">
+                        <label for="interest3">🧘 Yoga</label>
+                        
+                        <input type="checkbox" id="interest4" name="interests" value="nutrition">
+                        <label for="interest4">🥗 Nutrition</label>
+                        
+                        <input type="checkbox" id="interest5" name="interests" value="running">
+                        <label for="interest5">🏃‍♂️ Running</label>
+                        
+                        <input type="checkbox" id="interest6" name="interests" value="swimming">
+                        <label for="interest6">🏊 Swimming</label>
+                    </div>
+                </div>
+
+                <!-- Profile Picture Upload -->
+                <div class="form-group">
+                    <label for="profilePicture">Upload Profile Picture</label>
+                    <input type="file" 
+                           id="profilePicture" 
+                           name="profilePicture" 
+                           accept="image/*"
+                           capture="user">
+                    <span class="file-hint">Accepted formats: JPG, PNG, GIF (Max 5MB)</span>
+                </div>
+
+                <!-- Bonus: Color Picker -->
+                <div class="form-group">
+                    <label for="themeColor">Choose Your Theme Color</label>
+                    <input type="color" 
+                           id="themeColor" 
+                           name="themeColor" 
+                           value="#007bff">
+                    <span class="color-preview" id="colorPreview"></span>
+                </div>
+
+                <!-- Submit and Reset Buttons -->
+                <div class="button-group">
+                    <button type="submit" class="btn btn-submit">Create Account</button>
+                    <button type="reset" class="btn btn-reset">Reset Form</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 FitnessHub. All rights reserved.</p>
+            <p>Contact: <a href="mailto:info@fitnesshub.com">info@fitnesshub.com</a> | <a href="tel:+441234567890">+44 123 456 7890</a></p>
+            <p class="footer-links">
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a> | 
+                <a href="#">About Us</a>
+            </p>
+            <p class="github-link">
+                <a href="https://github.com/AqlanNaqib/registration-page" target="_blank" rel="noopener noreferrer">
+                    <span>🔗</span> View Project on GitHub
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Password Strength Meter
+        const passwordInput = document.getElementById('password');
+        const strengthMeter = document.getElementById('passwordStrength');
+        const strengthText = document.getElementById('strengthText');
+
+        passwordInput.addEventListener('input', function() {
+            const password = this.value;
+            let strength = 0;
+            
+            if (password.length >= 8) strength += 20;
+            if (password.length >= 12) strength += 10;
+            if (/[a-z]/.test(password)) strength += 20;
+            if (/[A-Z]/.test(password)) strength += 20;
+            if (/\d/.test(password)) strength += 15;
+            if (/[@$!%*#?&]/.test(password)) strength += 15;
+            
+            strengthMeter.value = strength;
+            
+            if (strength < 30) {
+                strengthText.textContent = 'Weak password';
+                strengthText.className = 'strength-indicator weak';
+            } else if (strength < 60) {
+                strengthText.textContent = 'Medium password';
+                strengthText.className = 'strength-indicator medium';
+            } else {
+                strengthText.textContent = 'Strong password';
+                strengthText.className = 'strength-indicator strong';
+            }
+        });
+
+        // Confirm Password Match
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        const passwordMatchError = document.getElementById('passwordMatchError');
+
+        confirmPasswordInput.addEventListener('input', function() {
+            if (this.value !== passwordInput.value && this.value.length > 0) {
+                this.setCustomValidity("Passwords do not match");
+                passwordMatchError.style.display = 'block';
+            } else {
+                this.setCustomValidity('');
+                passwordMatchError.style.display = 'none';
+            }
+        });
+
+        // Theme Color Preview
+        const themeColorInput = document.getElementById('themeColor');
+        const colorPreview = document.getElementById('colorPreview');
+        const form = document.getElementById('registrationForm');
+
+        themeColorInput.addEventListener('input', function() {
+            const color = this.value;
+            colorPreview.style.backgroundColor = color;
+            colorPreview.textContent = color;
+            
+            // Apply color to submit button
+            document.querySelector('.btn-submit').style.backgroundColor = color;
+        });
+
+        // Form validation on submit
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (this.checkValidity()) {
+                // Add your form submission logic here
+                alert('Form is valid! (In a real application, this would submit the data to a server)');
+                // form.submit(); // Uncomment this to actually submit
+            }
+        });
+
+        // Show/hide error messages on input
+        const inputs = form.querySelectorAll('input[required], input[pattern]');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                const errorMsg = this.parentElement.querySelector('.error-message');
+                if (!this.validity.valid) {
+                    errorMsg.style.display = 'block';
+                } else {
+                    errorMsg.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

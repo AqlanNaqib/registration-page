@@ -3,316 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Your Account - FitnessHub</title>
-    <link rel="stylesheet" href="style.css">
+    <title>FitnessHub - Your Premium Fitness Experience</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
+    <!-- Header Navigation -->
     <header>
-        <div class="header-content">
-            <div class="logo-container">
-                <div class="logo-icon">🏋️</div>
-                <div class="logo-text">
-                    <h1>FitnessHub</h1>
-                    <p class="tagline">Premium Fitness Experience</p>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <span class="logo-icon">🏋️</span>
+                    <span class="logo-text">FitnessHub</span>
                 </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="register.html" class="nav-link btn-nav">Get Started</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <nav class="header-nav">
-                <a href="#" class="nav-link">Home</a>
-                <a href="#" class="nav-link">About</a>
-                <a href="#" class="nav-link">Plans</a>
-                <a href="#" class="nav-link active">Register</a>
-            </nav>
-        </div>
+        </nav>
     </header>
 
-    <main>
-        <section class="registration-section">
-            <div class="section-header">
-                <h2>Create Your Account</h2>
-                <p class="intro-text">Join our community and start your fitness journey today</p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Transform Your Body, Transform Your Life</h1>
+            <p class="hero-subtitle">Join thousands of fitness enthusiasts on their journey to better health and wellness</p>
+            <div class="hero-buttons">
+                <a href="register.html" class="btn btn-primary">Start Your Journey</a>
+                <a href="#features" class="btn btn-secondary">Learn More</a>
             </div>
-            
-            <form id="registrationForm" method="POST" action="#" enctype="multipart/form-data">
-                
-                <!-- Full Name -->
-                <div class="form-group">
-                    <label for="fullName">Full Name <span class="required">*</span></label>
-                    <input type="text" 
-                           id="fullName" 
-                           name="fullName" 
-                           required 
-                           autofocus
-                           placeholder="Enter your full name"
-                           pattern="[A-Za-z\s]{2,50}"
-                           minlength="2"
-                           maxlength="50">
-                    <span class="error-message">Name must be 2-50 characters and contain only letters</span>
-                </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-placeholder">💪</div>
+        </div>
+    </section>
 
-                <!-- Email Address -->
-                <div class="form-group">
-                    <label for="email">Email Address <span class="required">*</span></label>
-                    <input type="email" 
-                           id="email" 
-                           name="email" 
-                           required
-                           placeholder="your.email@example.com"
-                           autocomplete="email">
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose FitnessHub?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏋️</div>
+                    <h3>Personalized Training</h3>
+                    <p>Custom workout plans designed specifically for your fitness goals and body type.</p>
                 </div>
-
-                <!-- Password -->
-                <div class="form-group full-width">
-                    <label for="password">Password <span class="required">*</span></label>
-                    <input type="password" 
-                           id="password" 
-                           name="password" 
-                           required
-                           placeholder="Minimum 8 characters with numbers and letters"
-                           pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$"
-                           minlength="8"
-                           autocomplete="new-password">
-                    <span class="error-message">Password must be at least 8 characters with letters and numbers</span>
-                    
-                    <!-- Bonus: Password strength meter -->
-                    <div class="password-strength">
-                        <meter id="passwordStrength" min="0" max="100" value="0" low="40" optimum="80" high="60">0%</meter>
-                        <span id="strengthText" class="strength-indicator">Enter password to check strength</span>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your progress with detailed analytics and visual charts of your fitness journey.</p>
                 </div>
-
-                <!-- Confirm Password -->
-                <div class="form-group full-width">
-                    <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
-                    <input type="password" 
-                           id="confirmPassword" 
-                           name="confirmPassword" 
-                           required
-                           placeholder="Re-enter your password"
-                           autocomplete="new-password">
-                    <span class="error-message" id="passwordMatchError">Passwords must match</span>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Community Support</h3>
+                    <p>Connect with like-minded fitness enthusiasts and share your achievements.</p>
                 </div>
-
-                <!-- Date of Birth -->
-                <div class="form-group">
-                    <label for="dateOfBirth">Date of Birth <span class="required">*</span></label>
-                    <input type="date" 
-                           id="dateOfBirth" 
-                           name="dateOfBirth" 
-                           required
-                           max="2010-12-31"
-                           min="1950-01-01">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Goal Setting</h3>
+                    <p>Set and achieve your fitness goals with our smart tracking and motivation system.</p>
                 </div>
-
-                <!-- Phone Number -->
-                <div class="form-group">
-                    <label for="phoneNumber">Phone Number <span class="required">*</span></label>
-                    <input type="tel" 
-                           id="phoneNumber" 
-                           name="phoneNumber" 
-                           required
-                           placeholder="+44 7XXX XXXXXX or 07XXX XXXXXX"
-                           pattern="[\+]?[0-9\s\-\(\)]{10,15}"
-                           autocomplete="tel">
-                    <span class="error-message">Please enter a valid phone number</span>
+                <div class="feature-card">
+                    <div class="feature-icon">💪</div>
+                    <h3>Expert Guidance</h3>
+                    <p>Get professional advice from certified fitness trainers and nutrition experts.</p>
                 </div>
-
-                <!-- Username with datalist -->
-                <div class="form-group">
-                    <label for="username">Preferred Username <span class="required">*</span></label>
-                    <input type="text" 
-                           id="username" 
-                           name="username" 
-                           required
-                           placeholder="Choose a unique username"
-                           pattern="[A-Za-z0-9_]{3,20}"
-                           minlength="3"
-                           maxlength="20"
-                           autocomplete="username">
-                    <datalist id="usernameSuggestions">
-                        <option value="FitnessWarrior">
-                        <option value="GymEnthusiast">
-                        <option value="HealthChampion">
-                    </datalist>
-                    <span class="error-message">Username must be 3-20 characters (letters, numbers, underscore only)</span>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Access your fitness journey anytime, anywhere with our mobile-optimized platform.</p>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- URL for Social Media -->
-                <div class="form-group full-width">
-                    <label for="socialUrl">Social Media Profile (Optional)</label>
-                    <input type="url" 
-                           id="socialUrl" 
-                           name="socialUrl" 
-                           placeholder="https://instagram.com/yourprofile">
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Active Members</div>
                 </div>
-
-                <!-- Gender -->
-                <div class="form-group full-width">
-                    <label>Gender <span class="required">*</span></label>
-                    <div class="radio-group">
-                        <input type="radio" id="male" name="gender" value="male" required>
-                        <label for="male" class="radio-label">Male</label>
-                        
-                        <input type="radio" id="female" name="gender" value="female">
-                        <label for="female" class="radio-label">Female</label>
-                        
-                        <input type="radio" id="other" name="gender" value="other">
-                        <label for="other" class="radio-label">Other</label>
-                    </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Expert Trainers</div>
                 </div>
-
-                <!-- Interests (Checkboxes) -->
-                <div class="form-group full-width">
-                    <label>Interests <span class="required">*</span></label>
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="interest1" name="interests" value="weightlifting" required>
-                        <label for="interest1">🏋️ Weightlifting</label>
-                        
-                        <input type="checkbox" id="interest2" name="interests" value="cardio">
-                        <label for="interest2">🏃 Cardio</label>
-                        
-                        <input type="checkbox" id="interest3" name="interests" value="yoga">
-                        <label for="interest3">🧘 Yoga</label>
-                        
-                        <input type="checkbox" id="interest4" name="interests" value="nutrition">
-                        <label for="interest4">🥗 Nutrition</label>
-                        
-                        <input type="checkbox" id="interest5" name="interests" value="running">
-                        <label for="interest5">🏃‍♂️ Running</label>
-                        
-                        <input type="checkbox" id="interest6" name="interests" value="swimming">
-                        <label for="interest6">🏊 Swimming</label>
-                    </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Workout Programs</div>
                 </div>
-
-                <!-- Profile Picture Upload -->
-                <div class="form-group full-width">
-                    <label for="profilePicture">Upload Profile Picture</label>
-                    <input type="file" 
-                           id="profilePicture" 
-                           name="profilePicture" 
-                           accept="image/*"
-                           capture="user">
-                    <span class="file-hint">Accepted formats: JPG, PNG, GIF (Max 5MB)</span>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Success Rate</div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Bonus: Color Picker -->
-                <div class="form-group full-width">
-                    <label for="themeColor">Choose Your Theme Color</label>
-                    <input type="color" 
-                           id="themeColor" 
-                           name="themeColor" 
-                           value="#6366f1">
-                    <span class="color-preview" id="colorPreview"></span>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About FitnessHub</h2>
+                    <p class="about-description">
+                        FitnessHub is more than just a fitness platform – it's your partner in achieving your health and wellness goals. We believe that everyone deserves access to quality fitness resources and expert guidance.
+                    </p>
+                    <p class="about-description">
+                        Our mission is to empower individuals to take control of their fitness journey through personalized training, comprehensive tracking, and a supportive community.
+                    </p>
+                    <a href="register.html" class="btn btn-primary">Join Us Today</a>
                 </div>
-
-                <!-- Submit and Reset Buttons -->
-                <div class="button-group">
-                    <button type="submit" class="btn btn-submit">Create Account</button>
-                    <button type="reset" class="btn btn-reset">Reset Form</button>
+                <div class="about-image">
+                    <div class="about-placeholder">🌟</div>
                 </div>
-            </form>
-        </section>
-    </main>
+            </div>
+        </div>
+    </section>
 
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Start Your Fitness Journey?</h2>
+                <p class="cta-subtitle">Join thousands of members achieving their fitness goals today</p>
+                <a href="register.html" class="btn btn-cta">Create Your Free Account</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <span class="logo-icon">🏋️</span>
+                    <span class="logo-text">FitnessHub</span>
+                </div>
+                <p class="footer-tagline">Your journey to better health starts here.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="mailto:info@fitnesshub.com">info@fitnesshub.com</a></li>
+                    <li><a href="tel:+441234567890">+44 123 456 7890</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
             <p>&copy; 2025 FitnessHub. All rights reserved.</p>
-            <p>Contact: <a href="mailto:info@fitnesshub.com">info@fitnesshub.com</a> | <a href="tel:+441234567890">+44 123 456 7890</a></p>
-            <p class="footer-links">
-                <a href="#">Privacy Policy</a> | 
-                <a href="#">Terms of Service</a> | 
-                <a href="#">About Us</a>
-            </p>
             <p class="github-link">
                 <a href="https://github.com/AqlanNaqib/registration-page" target="_blank" rel="noopener noreferrer">
-                    <span>🔗</span> View Project on GitHub
+                    <span>🔗</span> View on GitHub
                 </a>
             </p>
         </div>
     </footer>
 
     <script>
-        // Password Strength Meter
-        const passwordInput = document.getElementById('password');
-        const strengthMeter = document.getElementById('passwordStrength');
-        const strengthText = document.getElementById('strengthText');
-
-        passwordInput.addEventListener('input', function() {
-            const password = this.value;
-            let strength = 0;
-            
-            if (password.length >= 8) strength += 20;
-            if (password.length >= 12) strength += 10;
-            if (/[a-z]/.test(password)) strength += 20;
-            if (/[A-Z]/.test(password)) strength += 20;
-            if (/\d/.test(password)) strength += 15;
-            if (/[@$!%*#?&]/.test(password)) strength += 15;
-            
-            strengthMeter.value = strength;
-            
-            if (strength < 30) {
-                strengthText.textContent = 'Weak password';
-                strengthText.className = 'strength-indicator weak';
-            } else if (strength < 60) {
-                strengthText.textContent = 'Medium password';
-                strengthText.className = 'strength-indicator medium';
-            } else {
-                strengthText.textContent = 'Strong password';
-                strengthText.className = 'strength-indicator strong';
-            }
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
         });
 
-        // Confirm Password Match
-        const confirmPasswordInput = document.getElementById('confirmPassword');
-        const passwordMatchError = document.getElementById('passwordMatchError');
-
-        confirmPasswordInput.addEventListener('input', function() {
-            if (this.value !== passwordInput.value && this.value.length > 0) {
-                this.setCustomValidity("Passwords do not match");
-                passwordMatchError.style.display = 'block';
-            } else {
-                this.setCustomValidity('');
-                passwordMatchError.style.display = 'none';
-            }
-        });
-
-        // Theme Color Preview
-        const themeColorInput = document.getElementById('themeColor');
-        const colorPreview = document.getElementById('colorPreview');
-        const form = document.getElementById('registrationForm');
-
-        themeColorInput.addEventListener('input', function() {
-            const color = this.value;
-            colorPreview.style.backgroundColor = color;
-            colorPreview.textContent = color;
-            
-            // Apply color to submit button
-            document.querySelector('.btn-submit').style.backgroundColor = color;
-        });
-
-        // Form validation on submit
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            if (this.checkValidity()) {
-                // Add your form submission logic here
-                alert('Form is valid! (In a real application, this would submit the data to a server)');
-                // form.submit(); // Uncomment this to actually submit
-            }
-        });
-
-        // Show/hide error messages on input
-        const inputs = form.querySelectorAll('input[required], input[pattern]');
-        inputs.forEach(input => {
-            input.addEventListener('blur', function() {
-                const errorMsg = this.parentElement.querySelector('.error-message');
-                if (!this.validity.valid) {
-                    errorMsg.style.display = 'block';
-                } else {
-                    errorMsg.style.display = 'none';
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    navMenu.classList.remove('active');
+                    mobileToggle.classList.remove('active');
                 }
             });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
     </script>
 </body>
 </html>
-
