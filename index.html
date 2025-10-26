@@ -8,34 +8,29 @@
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <h1>🏋️ FitnessHub</h1>
-            <p class="tagline">Your Journey Starts Here</p>
-        </div>
-        
-        <!-- Bonus: Welcome video -->
-        <div class="welcome-media">
-            <video autoplay loop muted playsinline>
-                <source src="#" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        
-        <!-- Bonus: Audio player for background music -->
-        <div class="audio-controls">
-            <h3>🎵 Select Background Music:</h3>
-            <audio controls>
-                <source src="#" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-            <p class="audio-note">(Select music to enhance your experience)</p>
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo-icon">🏋️</div>
+                <div class="logo-text">
+                    <h1>FitnessHub</h1>
+                    <p class="tagline">Premium Fitness Experience</p>
+                </div>
+            </div>
+            <nav class="header-nav">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">Plans</a>
+                <a href="#" class="nav-link active">Register</a>
+            </nav>
         </div>
     </header>
 
     <main>
         <section class="registration-section">
-            <h2>Welcome! Create Your Account Below</h2>
-            <p class="intro-text">Join thousands of fitness enthusiasts on their journey to better health.</p>
+            <div class="section-header">
+                <h2>Create Your Account</h2>
+                <p class="intro-text">Join our community and start your fitness journey today</p>
+            </div>
             
             <form id="registrationForm" method="POST" action="#" enctype="multipart/form-data">
                 
@@ -66,7 +61,7 @@
                 </div>
 
                 <!-- Password -->
-                <div class="form-group">
+                <div class="form-group full-width">
                     <label for="password">Password <span class="required">*</span></label>
                     <input type="password" 
                            id="password" 
@@ -86,7 +81,7 @@
                 </div>
 
                 <!-- Confirm Password -->
-                <div class="form-group">
+                <div class="form-group full-width">
                     <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
                     <input type="password" 
                            id="confirmPassword" 
@@ -142,7 +137,7 @@
                 </div>
 
                 <!-- URL for Social Media -->
-                <div class="form-group">
+                <div class="form-group full-width">
                     <label for="socialUrl">Social Media Profile (Optional)</label>
                     <input type="url" 
                            id="socialUrl" 
@@ -151,7 +146,7 @@
                 </div>
 
                 <!-- Gender -->
-                <div class="form-group">
+                <div class="form-group full-width">
                     <label>Gender <span class="required">*</span></label>
                     <div class="radio-group">
                         <input type="radio" id="male" name="gender" value="male" required>
@@ -166,7 +161,7 @@
                 </div>
 
                 <!-- Interests (Checkboxes) -->
-                <div class="form-group">
+                <div class="form-group full-width">
                     <label>Interests <span class="required">*</span></label>
                     <div class="checkbox-group">
                         <input type="checkbox" id="interest1" name="interests" value="weightlifting" required>
@@ -190,7 +185,7 @@
                 </div>
 
                 <!-- Profile Picture Upload -->
-                <div class="form-group">
+                <div class="form-group full-width">
                     <label for="profilePicture">Upload Profile Picture</label>
                     <input type="file" 
                            id="profilePicture" 
@@ -201,12 +196,12 @@
                 </div>
 
                 <!-- Bonus: Color Picker -->
-                <div class="form-group">
+                <div class="form-group full-width">
                     <label for="themeColor">Choose Your Theme Color</label>
                     <input type="color" 
                            id="themeColor" 
                            name="themeColor" 
-                           value="#007bff">
+                           value="#6366f1">
                     <span class="color-preview" id="colorPreview"></span>
                 </div>
 
